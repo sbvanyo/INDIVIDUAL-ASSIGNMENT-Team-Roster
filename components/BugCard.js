@@ -25,7 +25,7 @@ function BugCard({ bugObj, onUpdate }) {
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link> */}
         {/* DYNAMIC LINK TO EDIT THE BUG DETAILS  */}
-        <Link href={`/bugs/edit/${bugObj.firebaseKey}`} passHref>
+        <Link href={`/bug/edit/${bugObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisBug} className="m-2">

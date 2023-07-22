@@ -33,7 +33,7 @@ function BugForm({ bugObj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (bugObj.firebaseKey) {
-      updateBug(formInput).then(() => router.push(`/bugs/edit/${bugObj.firebaseKey}`));
+      updateBug(formInput).then(() => router.push('/bug'));
     } else {
       // Spread syntax unpacks state object (formInput) and allows us to add uid to it
       const payload = { ...formInput, uid: user.uid };
