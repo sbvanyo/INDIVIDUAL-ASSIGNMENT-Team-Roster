@@ -1,4 +1,5 @@
 import React from 'react';
+import BugForm from '../../components/BugForm';
 
 export default function AddBug() {
   return (
@@ -12,6 +13,7 @@ export default function AddBug() {
       }}
     >
       <h1>ADD A MEMBER</h1>
+      <BugForm />
     </div>
   );
 }
