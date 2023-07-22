@@ -1,11 +1,22 @@
-import { Card, Link, Button } from 'react-bootstrap';
+import React from 'react';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
+import { deleteBug } from '../api/bugData';
 
-function BugCard({ bugObj }) {
+function BugCard({ bugObj, onUpdate }) {
   console.warn(bugObj);
+
+  const deleteThisBug = () => {
+    if (window.confirm(`Delete ${bugObj.name}?`)) {
+      deleteBug(bugObj.firebaseKey).then(() => onUpdate());
+    }
+  };
+
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
-      <Card.Img variant="top" src={bugObj.image} alt={bugObj.name} style={{ height: '400px' }} />
+    <Card style={{ width: '22rem', margin: '10px' }}>
+      <Card.Img variant="top" src={bugObj.image} alt={bugObj.name} style={{ height: 'auto' }} />
       <Card.Body>
         <Card.Title>{bugObj.name}</Card.Title>
         <p className="card-text bold">Role: {bugObj.role}</p>
@@ -17,9 +28,9 @@ function BugCard({ bugObj }) {
         <Link href={`/bugs/edit/${bugObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
-        {/* <Button variant="danger" onClick={deleteThisAuthor} className="m-2">
+        <Button variant="danger" onClick={deleteThisBug} className="m-2">
           DELETE
-        </Button> */}
+        </Button>
       </Card.Body>
     </Card>
   );
@@ -33,7 +44,7 @@ BugCard.propTypes = {
     firebaseKey: PropTypes.string,
     uid: PropTypes.string,
   }).isRequired,
-  // onUpdate: PropTypes.func.isRequired,
+  onUpdate: PropTypes.func.isRequired,
 };
 
 export default BugCard;
