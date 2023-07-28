@@ -1,18 +1,16 @@
 import React from 'react';
 import { Form, FloatingLabel } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
-// const initialState = '';
-
-export default function SearchBar() {
-  // const [searchInput, setSearchInput] = useState(initialState);
-
+export default function SearchBar({ onKeyUp }) {
   const handleKeyUp = (e) => {
-    console.warn('hello keyup', e.target);
+    // console.warn('hello keyup', e);
+    onKeyUp(e.target.value.toLowerCase());
   };
 
   return (
-    <Form>
-      <FloatingLabel controlId="floatingInput5" label="Search" className="mb-3">
+    <Form id="search">
+      <FloatingLabel controlId="search" label="Search" className="mb-3">
         <Form.Control
           type="text"
           placeholder="search..."
@@ -23,3 +21,7 @@ export default function SearchBar() {
     </Form>
   );
 }
+
+SearchBar.propTypes = {
+  onKeyUp: PropTypes.func.isRequired,
+};

@@ -38,4 +38,15 @@ h2 {
 
 #team-cards {
   display: flex;
+  text-align: center;
+}
+
+.card-title {
+  font-family: 'Edu SA Beginner', cursive;
+  font-weight: 600;
+}
+
+#search {
+  width: 40vh;
+  padding: 5px;
 }
