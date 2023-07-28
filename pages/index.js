@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '../utils/context/authContext';
 import BugCard from '../components/BugCard';
 import { getBugs } from '../api/bugData';
+import SearchBar from '../components/SearchBar';
 
 function Home() {
   // Set a state for bugs
@@ -19,6 +20,15 @@ function Home() {
     getAllTheBugs();
   }, []);
 
+  const filterResult = (query) => {
+    if (!query) {
+      getAllTheBugs();
+    } else {
+      const filter = bugs.filter((bug) => bug.name.toLowerCase().includes(query) || bug.role.toLowerCase().includes(query));
+      setBugs(filter);
+    }
+  };
+
   return (
     <>
       <div
@@ -30,7 +40,8 @@ function Home() {
           margin: '0 auto',
         }}
       >
-        <h1>TEAM</h1>
+        <SearchBar onKeyUp={(query) => filterResult(query)} />
+        <h1 style={{ fontSize: '90px' }}>TEAM</h1>
         {/* <p>Click the button below to logout!</p>
       <Button variant="danger" type="button" size="lg" className="copy-btn" onClick={signOut}>
         Sign Out

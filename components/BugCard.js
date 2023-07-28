@@ -15,11 +15,11 @@ function BugCard({ bugObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '22rem', margin: '10px' }}>
+    <Card className="card" style={{ width: '22rem', margin: '10px' }}>
       <Card.Img variant="top" src={bugObj.image} alt={bugObj.name} style={{ height: 'auto' }} />
       <Card.Body>
         <Card.Title>{bugObj.name}</Card.Title>
-        <p className="card-text bold">Role: {bugObj.role}</p>
+        <p className="card-text bold"><strong>Role:</strong> {bugObj.role}</p>
         {/* DYNAMIC LINK TO VIEW THE AUTHOR DETAILS
         <Link href={`/author/${authorObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>

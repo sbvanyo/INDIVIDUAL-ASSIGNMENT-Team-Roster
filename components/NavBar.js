@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import { React } from 'react';
 import Link from 'next/link';
 import {
   Navbar, Container, Nav, Button,
@@ -14,7 +14,7 @@ export default function NavBar() {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link passHref href="/">
-          <Navbar.Brand>{user.displayName}&apos;s Bug Club</Navbar.Brand>
+          <Navbar.Brand><h2>{user.displayName}&apos;s Bug Brigade</h2></Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
