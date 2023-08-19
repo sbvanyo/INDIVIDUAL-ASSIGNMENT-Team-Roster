@@ -1,5 +1,3 @@
-// import { Button } from 'react-bootstrap';
-// import { signOut } from '../utils/auth';
 import { useEffect, useState } from 'react';
 import { useAuth } from '../utils/context/authContext';
 import BugCard from '../components/BugCard';
@@ -18,7 +16,7 @@ function Home() {
   // Make the call to the API to get all the bugs on component render
   useEffect(() => {
     getAllTheBugs();
-  }, []);
+  });
 
   const filterResult = (query) => {
     if (!query) {
@@ -34,7 +32,6 @@ function Home() {
       <div
         className="text-center d-flex flex-column justify-content-center align-content-center"
         style={{
-          // height: '90vh',
           padding: '30px',
           maxWidth: '400px',
           margin: '0 auto',
@@ -42,10 +39,6 @@ function Home() {
       >
         <SearchBar onKeyUp={(query) => filterResult(query)} />
         <h1 style={{ fontSize: '90px' }}>TEAM</h1>
-        {/* <p>Click the button below to logout!</p>
-      <Button variant="danger" type="button" size="lg" className="copy-btn" onClick={signOut}>
-        Sign Out
-      </Button> */}
       </div>
       <div id="team-cards">
         {bugs.map((bug) => (

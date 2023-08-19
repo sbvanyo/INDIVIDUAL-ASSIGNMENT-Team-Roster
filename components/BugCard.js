@@ -6,8 +6,6 @@ import PropTypes from 'prop-types';
 import { deleteBug } from '../api/bugData';
 
 function BugCard({ bugObj, onUpdate }) {
-  console.warn(bugObj);
-
   const deleteThisBug = () => {
     if (window.confirm(`Delete ${bugObj.name}?`)) {
       deleteBug(bugObj.firebaseKey).then(() => onUpdate());
@@ -20,10 +18,6 @@ function BugCard({ bugObj, onUpdate }) {
       <Card.Body>
         <Card.Title>{bugObj.name}</Card.Title>
         <p className="card-text bold"><strong>Role:</strong> {bugObj.role}</p>
-        {/* DYNAMIC LINK TO VIEW THE AUTHOR DETAILS
-        <Link href={`/author/${authorObj.firebaseKey}`} passHref>
-          <Button variant="primary" className="m-2">VIEW</Button>
-        </Link> */}
         {/* DYNAMIC LINK TO EDIT THE BUG DETAILS  */}
         <Link href={`/bug/edit/${bugObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>

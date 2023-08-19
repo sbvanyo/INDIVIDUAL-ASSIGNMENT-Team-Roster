@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 export default function SearchBar({ onKeyUp }) {
   const handleKeyUp = (e) => {
-    // console.warn('hello keyup', e);
     onKeyUp(e.target.value.toLowerCase());
   };
 
