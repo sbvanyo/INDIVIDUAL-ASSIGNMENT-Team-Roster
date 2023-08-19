@@ -1,4 +1,10 @@
 # Team Roster - Bug Brigade
+## Link to deployed website: https://team-roster-sv.netlify.app/
+
+## Screenshots:
+<img width="1576" alt="Screen Shot 2023-08-19 at 12 17 28 PM" src="https://github.com/sbvanyo/INDIVIDUAL-ASSIGNMENT-Team-Roster/assets/120522998/fde459a5-5697-4413-b5d0-18dab8096a92">
+
+<img width="1577" alt="Screen Shot 2023-08-19 at 12 18 06 PM" src="https://github.com/sbvanyo/INDIVIDUAL-ASSIGNMENT-Team-Roster/assets/120522998/a5971524-d226-45e6-9201-0b16bfb54862">
 
 
 ## Figma wireframe: https://www.figma.com/file/S38O2yUPG9qYHwu33aMwmH/Team-Roster-Wireframe?type=design&node-id=0%3A1&mode=design&t=sN7JE6BstAWjBaHX-1
